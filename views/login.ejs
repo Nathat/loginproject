@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width",
+      initial-scale="1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link
+         rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+            <!--
+               data.pagename sอยู่ใน controller/login-controller.js
+            -->
+         <title><%= data.pageName %></title>
+   </head>
+   <body>
+      <div class="container">
+         <!-- ต้องรอดูไฟล์ต่อๆไป header.ejs ยังไม่ได้พิมพ์-->
+      
+         <div class="row">
+            <div class="col-md-5 mx-auto text-center">
+            <!--
+               col = column
+               xs = ขนาดของหน้าจอ Extra small (มีตัวอื่นอีกดูได้ด้านบน)
+               12 = ความกว้าง ซึ่ง 12 ถือเป็นความกว้างมากที่สุดของ Bootstrap
+
+               mx-auto class for horizontally centering fixed-width block level content
+
+            -->
+            <h1 class="display-3">Login</h1>
+            <!--
+               Display headings are used to stand out more than normal headings (larger font-size and lighter font-weight), and there are four classes to choose from: .display-1, .display-2, .display-3, .display-4
+            -->
+            <!--
+               data.class อยู่ใน controller/login-controller.js
+            -->
+            <div class="<%= data.class %>">
+               <%= data.message %>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+            <!-- col 11 คือ ความกว้าง -->
+            <!--  mt-5 is a class that adds a margin-top spacing of 3rem (or 48px) to an HTML element-->
+            <!-- .mx-auto class for horizontally centering fixed-width block level content-->
+           <div class="col-11 col-md-5 mt-5 mx-auto card">
+               <div class="card-body">
+                  <!-- login ตัวนี้คืออะไร folder เหรอ file นะ -->
+                  <form action="/login" method="POST">
+                     <div class="form-group">
+                     <!-- label ก็ป้าย ฉลาก-->
+                     <label for="username">User Name</label>
+                        <!-- Specifies the name of an <input> element(name="username") -->
+                        <!-- Form controls
+                        Textual form controls—like <input>s, <select>s, and <textarea>s—are styled with the .form-control class. Included are styles for general appearance, focus state, sizing, and more.-->
+                        <!-- An id on an <input> tag assigns an identifier to the input control.-->
+                     <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                     />
+                  </div>
+                  <div class="form-group">
+                     <label for="password">Password</label>
+                     <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                     />
+                  </div>
+                  <div class="text-center">
+                     <button type="submit" class="btn btn-primary"><!-- ปุ่มสีฟ้า-->
+                        Login
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </div>
+       </div></div></div>  
+   </body> 
+</html>
